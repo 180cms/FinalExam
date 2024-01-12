@@ -1,0 +1,55 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalExam.View.Question2"
+             Title="Question2">
+    <StackLayout Margin="40,0">
+        <Entry x:Name="PhoneEntry"
+               HorizontalTextAlignment="Center"
+               Placeholder="0112223333"
+               HorizontalOptions="FillAndExpand"
+               TextChanged="OnPhoneEntryTextChanged"/>
+
+        <Label x:Name="InvalidPhoneNumberLabel"
+               Text="Invalid Phone Number"
+               TextColor="Red"
+               IsVisible="False"/>
+
+        <Entry x:Name="PasswordEntry"
+               HorizontalTextAlignment="Center"
+               IsPassword="True"
+               Placeholder="Password"
+               HorizontalOptions="FillAndExpand"
+               TextChanged="OnPasswordEntryTextChanged"/>
+
+        <Label x:Name="PasswordLengthLabel"
+               Text="Password length should be greater than 5"
+               TextColor="Red"
+               IsVisible="False"/>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Center"
+                     Margin="0,15">
+            <CheckBox x:Name="TermsAndConditionsCheckbox"
+                      HorizontalOptions="Start"
+                      CheckedChanged="OnCheckboxCheckedChanged"/>
+
+            <Label x:Name="TermsAndConditionsLabel"
+                   Text="I have read the terms and conditions"
+                   TextColor="Black"
+                   FontSize="Small"
+                   HorizontalOptions="Start"
+                   Margin="5">
+            </Label>
+        </StackLayout>
+
+        <Button x:Name="RegisterButton"
+                Text="Register"
+                FontSize="Medium"
+                VerticalOptions="EndAndExpand"
+                CornerRadius="20"
+                HorizontalOptions="FillAndExpand"
+                IsEnabled="False"
+                Clicked="OnRegisterButtonClicked"/>
+    </StackLayout>
+</ContentPage>

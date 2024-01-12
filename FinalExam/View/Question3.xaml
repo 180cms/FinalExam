@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalExam.View.Question3"
+             Title="Question3"
+             Background="LightGray">
+
+    <ScrollView>
+        <StackLayout>
+            <Border Margin="20" StrokeShape="RoundRectangle 20" Stroke="Black">
+                <VerticalStackLayout Padding="10">
+                    <Label Text="Title" FontSize="16" Margin="0,10,0,0"/>
+                    <Entry x:Name="titleEntry" Placeholder="Enter Title" BindingContext="{Binding Title}"/>
+                    <Label Text="Body" FontSize="16" Margin="0,10,0,0"/>
+                    <Entry x:Name="bodyEntry" Placeholder="Enter Body" BindingContext="{Binding Body}"/>
+                    <Button Text="Save" Clicked="OnSaveClicked" Margin="0,15,0,0"/>
+                </VerticalStackLayout>
+            </Border>
+            <CollectionView x:Name="postsCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- Customize the layout for each item in the collection -->
+                        <Border Margin="20" StrokeShape="RoundRectangle 10" Stroke="Black">
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Title}" FontAttributes="Bold" />
+                                <Label Text="{Binding Body}" />
+                                <Button Text="Delete" Clicked="OnDeleteClicked" CommandParameter="{Binding .}" Margin="0,10,0,0" />
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
